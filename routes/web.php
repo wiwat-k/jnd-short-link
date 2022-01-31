@@ -17,6 +17,7 @@ use App\Http\Controllers\ShortLinkController;
 Route::get('/login', 'AuthController@loginPage')->name('login');
 Route::post('/auth/login', 'AuthController@login');
 Route::post('/auth/register', 'AuthController@register');
+Route::get('/auth/logout', 'AuthController@logout');
 
 Route::group([
     'middleware' => 'auth:web',

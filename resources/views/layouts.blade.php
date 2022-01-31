@@ -32,6 +32,7 @@
 <body>
 
     <div class="container">
+        @include('header')
         @yield('content')
     </div>
 
