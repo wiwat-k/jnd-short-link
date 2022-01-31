@@ -89,7 +89,11 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-        ],
+        ], 
+        'options' => array(
+            PDO::MYSQL_ATTR_SSL_CA => '/var/lib/mysql/cert.pem',
+            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
+        ),
 
     ],
 
@@ -123,7 +127,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
